@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Assembly: Endgame 🎮
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive word-guessing game built with React. The concept is a programming-themed spin on the classic Hangman game. Players must guess a secret tech-related word letter-by-letter within 9 attempts to protect the programming world from reverting back to assembly language!
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+* **Dynamic Word Generation:** Pulls random words from a customized vocabulary file on game load and reset.
+* **Visual Strike Tracking:** Real-time visual tracking of language chips representing your remaining attempts.
+* **Interactive Virtual Keyboard:** Accessible key buttons that alter color state dynamically to indicate right (green) or wrong (orange) choices.
+* **Game Status Banner:** Alerts users gracefully when they win, lose, or keep guessing.
+* **Celebration Effects:** Triggers a fullscreen confetti drop (`react-confetti`) the moment a player successfully completes a word.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+* **Frontend Library:** React (Functional Components, Hooks)
+* **Styling:** Custom CSS (Flexbox layout)
+* **Libraries:** `react-confetti` (for the win screen)
+* **Build Tool:** Create React App (Webpack configuration)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```text
+assembly-endgame/
+├── public/
+│   └── index.html
+|   └── index.css
+├── src/
+│   ├── App.jsx              # Main Game Component & Core Logic
+│   ├── Banner.jsx           # Win/Loss notification banner
+│   ├── Keyboard.jsx         # Individual key component
+│   ├── languages.js         # Configuration data for the language chips
+│   ├── words.js             # List of secret game words
+│   |__ index.jsx            # Application entry point
+│ 
+├── package.json
+└── README.md
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Setup and Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Follow these steps to set up and run the project locally on your machine.
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Make sure you have [Node.js](https://nodejs.org/) installed on your computer.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Steps
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the Repository**
+```bash
+git clone https://github.com/pakbungdesu/assembly-endgame.git
+cd assembly-endgame
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Install Dependencies**
+Install the required project dependencies using npm:
+```bash
+npm install --legacy-peer-deps
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+*(Note: The `--legacy-peer-deps` flag ensures smooth installations between dependencies across different runtime environments.)*
+3. **Start the Local Server**
+Run the development environment:
+```bash
+npm start
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+4. **Play the Game!**
+Open your browser and navigate to `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🕹️ How to Play
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Review the empty dashes representing the hidden programming word.
+2. Click on the letters on the virtual keyboard to make a guess.
+3. **Correct letters** reveal their placement in the hidden word block and highlight the keyboard key in **Green**.
+4. **Incorrect letters** burn up a programming language barrier chip and highlight the keyboard key in **Orange**.
+5. Save the ecosystem before your 9 fallback languages run out and you get stuck using **Assembly**!
