@@ -4,6 +4,7 @@ import Banner from "./Banner"
 import { words } from "./words"
 import { languages } from "./languages"
 import Confetti from "react-confetti"
+import { clsx } from "clsx"
 
 export default function AssemblyEndgame() {
     const [currentWord, setCurrentWord] = useState(words[Math.floor(Math.random() * words.length)])
@@ -49,17 +50,24 @@ export default function AssemblyEndgame() {
         )).join(" ")
 
     const languageElements = languages.map((lang, index) => {
+        const wrongGuesses = 9 - remainingAttempts
+        const condition = wrongGuesses > index
+        const className = clsx("chip", condition && "lost")
+
         const styles = {
-            backgroundColor: 9 - remainingAttempts > index ? "#8E8E8E" : lang.backgroundColor,
-            color: lang.color
+            backgroundColor: condition ? "#333333" : lang.backgroundColor,
+            color: condition ? "#1e1e1e" : lang.color,
+            position: "relative"
         }
+        
         return (
             <span
-                className="chip"
+                className={className}
                 style={styles}
                 key={lang.name}
             >
                 {lang.name}
+                {condition && <span className="skull-icon">💀</span>}
             </span>
         )
     })
