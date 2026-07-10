@@ -46,7 +46,7 @@ export default function AssemblyEndgame() {
     }
 
     const displayWord = currentWord.split("").map(letter => (
-            guessedLetters.includes(letter) ? letter.toUpperCase() : "_"
+            guessedLetters.includes(letter) ? letter.toUpperCase() : " "
         )).join(" ")
 
     const languageElements = languages.map((lang, index) => {
