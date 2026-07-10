@@ -88,7 +88,7 @@ export default function AssemblyEndgame() {
             <header>
                 <h1>Assembly: Endgame</h1>
                 <p>Guess the word within 9 attempts to keep the
-                programming world safe from Assembly!</p>
+                programming world safe!</p>
             </header>
             <Banner gameWin={gameWin} 
                 gameLost={gameLost} 
