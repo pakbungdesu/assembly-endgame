@@ -1,6 +1,6 @@
 # Assembly: Endgame 🎮
 
-An interactive word-guessing game built with React. The concept is a programming-themed spin on the classic Hangman game. Players must guess a secret tech-related word letter-by-letter within 9 attempts to protect the programming world from reverting back to assembly language!
+An interactive word-guessing game built with React. The concept is a programming-themed spin on the classic Hangman game. Players must guess a secret tech-related word letter-by-letter within 9 attempts to protect the programming world!
 
 ---
 
@@ -88,4 +88,4 @@ Open your browser and navigate to `http://localhost:3000`.
 2. Click on the letters on the virtual keyboard to make a guess.
 3. **Correct letters** reveal their placement in the hidden word block and highlight the keyboard key in **Green**.
 4. **Incorrect letters** burn up a programming language barrier chip and highlight the keyboard key in **Orange**.
-5. Save the ecosystem before your 9 fallback languages run out and you get stuck using **Assembly**!
+5. Save the ecosystem before your 9 fallback languages run out!
