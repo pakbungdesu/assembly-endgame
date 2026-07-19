@@ -3,6 +3,7 @@ import Keyboard from "./Keyboard"
 import Banner from "./Banner"
 import { words } from "./words"
 import { languages } from "./languages"
+import  { clsx } from "clsx"
 import Confetti from "react-confetti"
 
 export default function AssemblyEndgame() {
@@ -44,10 +45,6 @@ export default function AssemblyEndgame() {
         }
     }
 
-    const displayWord = currentWord.split("").map(letter => (
-            guessedLetters.includes(letter) ? letter.toUpperCase() : "_"
-        )).join(" ")
-
     const languageElements = languages.map((lang, index) => {
         const wrongGuesses = 9 - remainingAttempts
         const condition = wrongGuesses > index
@@ -70,9 +67,17 @@ export default function AssemblyEndgame() {
         )
     })
 
-    const letterElements = displayWord.split(" ").map((letter, index) => (
-        <span key={index}>{letter}</span>
-    ))
+    const letterElements = currentWord.split("").map((letter, index) => {
+        const shouldRevealLetter = gameLost || guessedLetters.includes(letter)
+        const letterClassName = clsx(
+            gameLost && !guessedLetters.includes(letter) && "missed-letter"
+        )
+        return (
+            <span key={index} className={letterClassName}>
+                {shouldRevealLetter ? letter.toUpperCase() : ""}
+            </span>
+        )
+    })
 
     const keyboardElements = alphabet.split("").map(letter => (
         <Keyboard
