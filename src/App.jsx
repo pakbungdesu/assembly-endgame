@@ -4,7 +4,6 @@ import Banner from "./Banner"
 import { words } from "./words"
 import { languages } from "./languages"
 import Confetti from "react-confetti"
-import { clsx } from "clsx"
 
 export default function AssemblyEndgame() {
     const [currentWord, setCurrentWord] = useState(words[Math.floor(Math.random() * words.length)])
