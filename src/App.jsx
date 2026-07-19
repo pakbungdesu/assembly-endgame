@@ -80,6 +80,7 @@ export default function AssemblyEndgame() {
             letter={letter}
             addGuessedLetter={() => addGuessedLetter(letter)}
             keyboardColor={() => keyboardColor(letter)}
+            gameLost={!gameOn || gameLost}
         />
     ))
 

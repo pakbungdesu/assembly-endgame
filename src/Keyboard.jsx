@@ -9,6 +9,7 @@ export default function Keyboard(props) {
             style={styles}
             key={props.letter}
             onClick={props.addGuessedLetter}
+            disabled={props.gameLost}
         >
             {props.letter.toUpperCase()}
         </button>
