@@ -10,7 +10,7 @@ export default function Keyboard(props) {
             key={props.letter}
             onClick={props.addGuessedLetter}
             disabled={props.gameLost}
-            aria-disabled={props.aria-disabled}
+            aria-disabled={props.ariaDisabled}
             aria-label={`Letter ${props.letter}`}
         >
             {props.letter.toUpperCase()}
